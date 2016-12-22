@@ -3,7 +3,7 @@ var dbConfig = require('./dbconfig.js');
 
 var mongodb = require('mongodb');
 var MongoClient = mongodb.MongoClient;
-var url = 'mongodb://cis550group4:projectgroup4cis550@ec2-52-90-34-234.compute-1.amazonaws.com:27017/project?authSource=admin';
+var url = ''; // mongodb connection string
 
 exports.redirect = function(req, res) {
     res.render('country_index.jade');

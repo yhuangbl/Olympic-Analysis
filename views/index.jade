@@ -1,0 +1,76 @@
+extends layout
+block extraHeader
+    style.
+        .intro {
+            display: table;
+            width: 100%;
+            height: auto;
+            padding: 100px 0;
+            text-align: center;
+            color: white;
+            background: url(../img/intro-bg.jpg) no-repeat bottom center scroll;
+            background-color: black;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            background-size: cover;
+            -o-background-size: cover;
+        }
+
+        .intro .intro-body {
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        .intro .intro-body .brand-heading {
+            font-size: 40px;
+        }
+
+        .intro .intro-body .intro-text {
+            font-size: 18px;
+        }
+
+        @media (min-width: 768px) {
+            .intro {
+                height: 100%;
+                padding: 0;
+            }
+            .intro .intro-body .brand-heading {
+                font-size: 80px;
+            }
+            .intro .intro-body .intro-text {
+                font-size: 26px;
+            }
+        }
+
+block introHeader
+    header.intro
+        .intro-body
+            .container
+                .row
+                    .col-md-8.col-md-offset-2
+                        h1.brand-heading Olympic Database
+                        a.btn.btn-circle.page-scroll(href='#about')
+                            i.fa.fa-angle-double-down.animated
+block content
+    section#about.container.content-section.text-center
+        .row
+            .col-lg-8.col-lg-offset-2
+                h2 Project Description
+                p
+                    | With the closing of Rio 2016 Olympic Games, people have witnessed lots of world records and Olympics records being broken by these energetic athletics. As some audience may notice that certain sports have been dominated by some countries for relatively long time. For example, Japan is undefeated in Judo, which was first introduced to Olympics Game in 1964. Kenya runners claimed the top spots in the men’s 3,000-meter since 1984.
+                p
+                    | Our group believe that a nation’s geographical location, GDP and people demographics may explain the reasons behind a country’s supremacy in certain Olympic sport.
+                p
+                    | In this web app, you will get to know:
+                p 1. What countries are good at a particular sport and the factors causing the differences. 
+                p 2. What are the top sports that a particular country is good at.
+                p 3. What are the top atheletes in each country.
+                p 4. The distribution of Olympic medals in terms of time and space.
+    section#about.container.content-section.text-center
+        .row
+            .col-lg-8.col-lg-offset-2
+                h2 Twitter Feed
+                p The latest tweets talking about Olympics
+                a.twitter-timeline(href='https://twitter.com/hashtag/Olympics', data-widget-id='808047477337321473') #Olympics Tweets
+                script.
+                    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");

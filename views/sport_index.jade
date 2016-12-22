@@ -1,0 +1,253 @@
+extends layout
+block extraHeader
+    meta(name='description', content='')   
+    meta(name='viewport', content='width=550, initial-scale=1')
+    link(rel='stylesheet', href='flipster/dist/jquery.flipster.min.css')
+    script(src='flipster/demo/jquery.min.js')
+    script(src='flipster/dist/jquery.flipster.min.js')
+
+    style.
+        .intro {
+            display: table;
+            width: 100%;
+            height: auto;
+            padding: 100px 0;
+            text-align: center;
+            color: white;
+            background: url(../img/sport-bg.jpg) no-repeat bottom center scroll;
+            background-color: black;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            background-size: cover;
+            -o-background-size: cover;
+        }
+
+        .intro .intro-body {
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        .intro .intro-body .brand-heading {
+            font-size: 40px;
+        }
+
+        .intro .intro-body .intro-text {
+            font-size: 18px;
+        }
+
+        @media (min-width: 768px) {
+            .intro {
+                height: 100%;
+                padding: 0;
+            }
+            .intro .intro-body .brand-heading {
+                font-size: 80px;
+            }
+            .intro .intro-body .intro-text {
+                font-size: 26px;
+            }
+        }
+        table {
+        border-collapse: collapse;
+        width: 100%;
+        }
+        th, td {
+        text-align: left;
+        padding: 8px;
+        }
+        tr:nth-child(even){background-color:#ffffe6}
+        th {
+        background-color: #ffcc99;
+        color: white;
+        }
+        #coverflow img {
+            height: 240px;
+            width: 240px;
+        }
+
+block introHeader
+    header.intro
+        .intro-body
+            .container
+                .row
+                    .col-md-8.col-md-offset-2
+                        h1.brand-heading Sport
+                        p.intro-text
+                            | Discover the dominat countries for each sport
+                        a.btn.btn-circle.page-scroll(href='#about')
+                            i.fa.fa-angle-double-down.animated
+
+block content
+    section#about.container.content-section.text-center
+        .row
+            .col-lg-8.col-lg-offset-2
+                article#sports-list.demo
+                    h2  Choose an Olympic Sport
+
+                    #coverflow
+                        ul.flip-items
+                            li(data-flip-title='ARCHERY')
+                                a(href='/sport?sport=Archery')
+                                    img(src='img/ARCHERY.png') 
+
+                            li(data-flip-title='ATHLETICS')
+                                a(href='/sport?sport=Athletics')
+                                    img(src='img/ATHLETICS.png')
+
+                            li(data-flip-title='BADMINTON')
+                                a(href='/sport?sport=Badminton')
+                                    img(src='img/BADMINTON.png')
+
+                            li(data-flip-title='BASKETBALL')
+                                a(href='/sport?sport=Basketball')
+                                    img(src='img/BASKETBALL.png')
+
+                            li(data-flip-title='BEACH VOLLEYBALL')
+                                a(href='/sport?sport=Beach+volley.')
+                                    img(src='img/BEACH VOLLEYBALL.png')
+
+                            li(data-flip-title='BOXING')
+                                a(href='/sport?sport=Boxing')
+                                    img(src='img/BOXING.png')
+
+                            li(data-flip-title='CANOE SLALOM')
+                                a(href='/sport?sport=Canoe+%2F+Kayak+F')
+                                    img(src='img/CANOE SLALOM.png')
+
+                            li(data-flip-title='CANOE SPRINT')
+                                a(href='/sport?sport=Canoe+%2F+Kayak+S')
+                                    img(src='img/CANOE SPRINT.png')
+
+                            li(data-flip-title='CYCLING BMX')
+                                a(href='/sport?sport=BMX')
+                                    img(src='img/CYCLING BMX.png')
+
+                            li(data-flip-title='CYCLING MOUNTAIN BIKE')
+                                a(href='/sport?sport=Mountain+Bike')
+                                    img(src='img/CYCLING MOUNTAIN BIKE.png')
+
+                            li(data-flip-title='CYCLING ROAD')
+                                a(href='/sport?sport=Cycling+Road')
+                                    img(src='img/CYCLING ROAD.png')
+
+                            li(data-flip-title='CYCLING TRACK')
+                                a(href='/sport?sport=Cycling+Track')
+                                    img(src='img/CYCLING TRACK.png')
+
+                            li(data-flip-title='DIVING')
+                                a(href='/sport?sport=Diving')
+                                    img(src='img/DIVING.png')
+
+                            li(data-flip-title='EQUESTRIAN DRESSAGE')
+                                a(href='/sport?sport=Dressage')
+                                    img(src='img/EQUESTRIAN DRESSAGE.png')
+
+                            li(data-flip-title='EQUESTRIAN EVENTING')
+                                a(href='/sport?sport=Eventing')
+                                    img(src='img/EQUESTRIAN EVENTING.png')
+
+                            li(data-flip-title='EQUESTRIAN JUMPING')
+                                a(href='/sport?sport=Jumping')
+                                    img(src='img/EQUESTRIAN JUMPING.png')
+
+                            li(data-flip-title='FENCING')
+                                a(href='/sport?sport=Fencing')
+                                    img(src='img/FENCING.png')
+
+                            li(data-flip-title='FOOTBALL')
+                                a(href='/sport?sport=Football')
+                                    img(src='img/FOOTBALL.png')
+
+                            li(data-flip-title='GOLF')
+                                a(href='/sport?sport=Golf')
+                                    img(src='img/GOLF.png')
+
+                            li(data-flip-title='GYMNASTICS ARTISTIC')
+                                a(href='/sport?sport=Artistic+G.')
+                                    img(src='img/GYMNASTICS ARTISTIC.png')
+
+                            li(data-flip-title='GYMNASTICS RHYTHMIC')
+                                a(href='/sport?sport=Rhythmic+G.')
+                                    img(src='img/GYMNASTICS RHYTHMIC.png')
+
+                            li(data-flip-title='HANDBALL')
+                                a(href='/sport?sport=Handball')
+                                    img(src='img/HANDBALL.png')
+
+                            li(data-flip-title='HOCKEY')
+                                a(href='/sport?sport=Hockey')
+                                    img(src='img/HOCKEY.png')
+
+                            li(data-flip-title='JUDO')
+                                a(href='/sport?sport=Judo')
+                                    img(src='img/JUDO.png')
+
+                            li(data-flip-title='MODERN PENTATHLON')
+                                a(href='/sport?sport=Modern+Pentath.')
+                                    img(src='img/MODERN PENTATHLON.png')
+
+                            li(data-flip-title='ROWING')
+                                a(href='/sport?sport=Rowing')
+                                    img(src='img/ROWING.png')
+
+                            li(data-flip-title='RUGBY')
+                                a(href='/sport?sport=Rugby')
+                                    img(src='img/RUGBY.png')
+
+                            li(data-flip-title='SAILING')
+                                a(href='/sport?sport=Sailing')
+                                    img(src='img/SAILING.png')
+
+                            li(data-flip-title='SHOOTING')
+                                a(href='/sport?sport=Shooting')
+                                    img(src='img/SHOOTING.png')
+
+                            li(data-flip-title='SWIMMING')
+                                a(href='/sport?sport=Swimming')
+                                    img(src='img/SWIMMING.png')
+
+                            li(data-flip-title='SYNCHRONIZED SWIMMING')
+                                a(href='/sport?sport=Synchronized+S.')
+                                    img(src='img/SYNCHRONIZED SWIMMING.png')
+
+                            li(data-flip-title='TABLE TENNIS')
+                                a(href='/sport?sport=Table+Tennis')
+                                    img(src='img/TABLE TENNIS.png')
+
+                            li(data-flip-title='TAEKWONDO')
+                                a(href='/sport?sport=Taekwondo')
+                                    img(src='img/TAEKWONDO.png')
+
+                            li(data-flip-title='TENNIS')
+                                a(href='/sport?sport=Tennis')
+                                    img(src='img/TENNIS.png')
+
+                            li(data-flip-title='TRAMPOLINE')
+                                a(href='/sport?sport=Trampoline')
+                                    img(src='img/TRAMPOLINE.png')
+
+                            li(data-flip-title='TRIATHLON')
+                                a(href='/sport?sport=Triathlon')
+                                    img(src='img/TRIATHLON.png')
+
+                            li(data-flip-title='VOLLEYBALL')
+                                a(href='/sport?sport=Volleyball')
+                                    img(src='img/VOLLEYBALL.png')
+
+                            li(data-flip-title='WATER POLO')
+                                a(href='/sport?sport=Water+polo')
+                                    img(src='img/WATER POLO.png')
+
+                            li(data-flip-title='WEIGHTLIFTING')
+                                a(href='/sport?sport=Weightlifting')
+                                    img(src='img/WEIGHTLIFTING.png')
+
+                            li(data-flip-title='WRESTLING FREESTYLE')
+                                a(href='/sport?sport=Wrestling+Free.')
+                                    img(src='img/WRESTLING FREESTYLE.png')
+
+                            li(data-flip-title='WRESTLING GRECO-ROMAN')
+                                a(href='/sport?sport=Wrestling+Gre-R')
+                                    img(src='img/WRESTLING GRECO-ROMAN.png')
+                        script.
+                            var coverflow = $("#coverflow").flipster({nav: 'after', spacing: -0.3, loop: true, start: 10});

@@ -1,0 +1,232 @@
+extends layout
+block extraHeader
+    style.
+        .intro {
+            display: table;
+            width: 100%;
+            height: auto;
+            padding: 100px 0;
+            text-align: center;
+            color: white;
+            background: url(../img/country-bg.jpg) no-repeat bottom center scroll;
+            background-color: black;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            background-size: cover;
+            -o-background-size: cover;
+        }
+
+        .intro .intro-body {
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        .intro .intro-body .brand-heading {
+            font-size: 40px;
+        }
+
+        .intro .intro-body .intro-text {
+            font-size: 18px;
+        }
+
+        @media (min-width: 768px) {
+            .intro {
+                height: 100%;
+                padding: 0;
+            }
+            .intro .intro-body .brand-heading {
+                font-size: 80px;
+            }
+            .intro .intro-body .intro-text {
+                font-size: 26px;
+            }
+        }
+
+        path {
+            stroke: steelblue;
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .axis path,
+        .axis line {
+            fill: none;
+            stroke: grey;
+            stroke-width: 1;
+            shape-rendering: crispEdges;
+        }
+
+block introHeader
+    header.intro
+        .intro-body
+            .container
+                .row
+                    .col-md-8.col-md-offset-2
+                        h1.brand-heading Country
+                        p.intro-text
+                            | Discover the dominat sports for each country
+                        a.btn.btn-circle.page-scroll(href='#about')
+                            i.fa.fa-angle-double-down.animated
+
+block content
+    section#about.container.content-section.text-center
+        .row
+            .col-lg-8.col-lg-offset-2
+                h2 the dominant sport for #{input_country}
+                -if (results.rows.length == 0)
+                    p no data found
+                -else
+                    table.table.table-hover
+                        tr
+                            th Sport
+                            th &nbsp;
+                            th # of medals
+                        - for (var inx = 0; inx < results.rows.length; inx++)
+                            tr
+                                td=results.rows[inx][0]
+                                td &nbsp;
+                                td=results.rows[inx][1]
+                                td &nbsp;
+
+    section#about.container.content-section.text-center
+        .row
+            .col-lg-8.col-lg-offset-2
+                h2 the athletes that win the most medals for #{input_country}
+                -if (athletes.rows.length == 0)
+                    p no data found
+                -else
+                    table.table.table-hover
+                        tr
+                            th name
+                            th &nbsp;
+                            th # of medals
+                        - for (var inx = 0; inx < athletes.rows.length; inx++)
+                            tr
+                                td=athletes.rows[inx][0]
+                                td &nbsp;
+                                td=athletes.rows[inx][1]
+                                td &nbsp;
+
+    section#about.container.content-section.text-center
+        .row
+            .col-lg-8.col-lg-offset-2
+                h2 line chart of total medals won
+                #container
+                script(src='http://d3js.org/d3.v3.min.js')
+                script.
+                    var data = !{JSON.stringify(records)};
+                    console.log(data);
+                    var margin = {
+                    top: 20,
+                    right: 80,
+                    bottom: 50,
+                    left: 50
+                    },
+                    width = 800 - margin.left - margin.right,
+                    height = 480 - margin.top - margin.bottom;
+                    var x = d3.scale.linear()
+                    .range([0, width]);
+                    var y = d3.scale.linear()
+                    .range([height, 0]);
+                    var color = d3.scale.category10();
+                    var xAxis = d3.svg.axis()
+                    .scale(x)
+                    .orient("bottom")
+                    .tickValues(d3.range(1896, 2012, 4));
+                    var yAxis = d3.svg.axis()
+                    .scale(y)
+                    .orient("left");
+                    var line = d3.svg.line()
+                    .interpolate("linear")
+                    .x(function(d) {
+                    return x(d.Year);
+                    })
+                    .y(function(d) {
+                    return y(d.Value);
+                    });
+                    var svg = d3.select("#container").append("svg")
+                    .attr("width", width + margin.left + margin.right)
+                    .attr("height", height + margin.top + margin.bottom)
+                    .append("g")
+                    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+                    var cities = data;
+                    var minX = 1896;
+                    var maxX = 2008;
+                    var minY = d3.min(data, function(kv) {
+                    return d3.min(kv.Data, function(d) {
+                    return d.Value;
+                    })
+                    });
+                    var maxY = d3.max(data, function(kv) {
+                    return d3.max(kv.Data, function(d) {
+                    return d.Value;
+                    })
+                    });
+                    x.domain([minX, maxX]);
+                    y.domain([minY, maxY]);
+                    svg.append("g")
+                    .attr("class", "x axis")
+                    .attr("transform", "translate(0," + height + ")")
+                    .call(xAxis)
+                    .selectAll("text")
+                    .attr("y", 0)
+                    .attr("x", 9)
+                    .attr("dy", ".35em")
+                    .attr("transform", "rotate(90)")
+                    .style("text-anchor", "start");
+                    svg.append("g")
+                    .attr("class", "y axis")
+                    .call(yAxis)
+                    .append("text")
+                    .attr("transform", "rotate(-90)")
+                    .attr("y", 6)
+                    .attr("dy", ".71em")
+                    .style("text-anchor", "end")
+                    .text("total medals");
+                    var city = svg.selectAll(".city")
+                    .data(cities)
+                    .enter().append("g")
+                    .attr("class", "city")
+                    .attr("class", function(d) {
+                    return d.City
+                    });
+                    city.append("path")
+                    .attr("class", "line")
+                    .attr("d", function(d) {
+                    return line(d.Data);
+                    })
+                    .style("stroke", function(d) {
+                    return color(d.City);
+                    })
+                    svg.selectAll("g.dot")
+                    .data(data)
+                    .enter().append("g")
+                    .attr("class", "dot")
+                    .selectAll("circle")
+                    .data(function(d) {
+                    return d.Data;
+                    })
+                    .enter().append("circle")
+                    .attr("r", 6)
+                    .attr("cx", function(d, i) {
+                    return x(d.Year);
+                    })
+                    .attr("cy", function(d, i) {
+                    return y(d.Value);
+                    })
+                    city.append("text")
+                    .datum(function(d) {
+                    return {
+                    year: d.Data[d.Data.length - 1].Year,
+                    value: d.Data[d.Data.length - 1].Value
+                    };
+                    })
+                    .attr("transform", function(d) {
+                    return "translate(" + x(d.year) + "," + y(d.value) + ")";
+                    })
+                    .attr("x", 3)
+                    .attr("dy", ".35em");
+
+                br
+                form(method='get', action='/redirect_country')
+                    input(type='submit', value='Return')

@@ -1,0 +1,56 @@
+doctype html
+html(lang='en')
+    head
+        title Olympics Database Application
+        link(rel='stylesheet', type='text/css', href='bootstrap/css/bootstrap.min.css')
+        // Custom Fonts
+        link(href='font-awesome/css/font-awesome.min.css', rel='stylesheet', type='text/css')
+        link(href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic', rel='stylesheet', type='text/css')
+        link(href='https://fonts.googleapis.com/css?family=Montserrat:400,700', rel='stylesheet', type='text/css')
+        // Theme CSS
+        link(href='css/grayscale.css', rel='stylesheet')
+        block extraHeader
+    body#page-top(data-spy='scroll', data-target='.navbar-fixed-top')
+        // Navigation
+        nav.navbar.navbar-custom.navbar-fixed-top(role='navigation')
+            .container
+                .navbar-header
+                    button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-main-collapse')
+                        | Menu 
+                        i.fa.fa-bars
+                // Collect the nav links, forms, and other content for toggling
+                .collapse.navbar-collapse.navbar-right.navbar-main-collapse
+                    ul.nav.navbar-nav
+                        // Hidden li included to remove active class from about link when scrolled up past about section
+                        li.hidden
+                            a(href='#page-top')
+                        li
+                            a.page-scroll(href='/redirect_country') Country
+                        li
+                            a.page-scroll(href='/redirect_sport') Sport
+                        li
+                            a.page-scroll(href='/map') Map
+                        li
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        li
+                            a.page-scroll(href='/') Home
+        // Intro Header
+        block introHeader
+
+        //Sections
+        block content
+
+        // Footer
+        footer
+            .container.text-center
+                p(style='font-size:70%;') Copyright © CIS450/550 project team 4, 2016
+                p(style='font-size:70%;')
+                    | Photoes used are from 
+                    a(href='www.olympic.org') Olympic offical website
+
+        //jQuery
+        script(src='jquery/jquery.min.js')
+        //Bootstrap
+        script(src='bootstrap/js/bootstrap.min.js')
+        // Theme JavaScript
+        script(src='js/grayscale.min.js')

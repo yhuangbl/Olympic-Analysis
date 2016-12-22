@@ -1,0 +1,915 @@
+extends layout
+block extraHeader
+    meta(name='description', content='')
+    meta(name='viewport', content='width=550, initial-scale=1')
+    link(rel='stylesheet', href='flipster/dist/jquery.flipster.min.css')
+    script(src='flipster/demo/jquery.min.js')
+    script(src='flipster/dist/jquery.flipster.min.js')
+    style.
+        .intro {
+            display: table;
+            width: 100%;
+            height: auto;
+            padding: 100px 0;
+            text-align: center;
+            color: white;
+            background: url(../img/country-bg.jpg) no-repeat bottom center scroll;
+            background-color: black;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            background-size: cover;
+            -o-background-size: cover;
+        }
+
+        .intro .intro-body {
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        .intro .intro-body .brand-heading {
+            font-size: 40px;
+        }
+
+        .intro .intro-body .intro-text {
+            font-size: 18px;
+        }
+
+        @media (min-width: 768px) {
+            .intro {
+                height: 100%;
+                padding: 0;
+            }
+            .intro .intro-body .brand-heading {
+                font-size: 80px;
+            }
+            .intro .intro-body .intro-text {
+                font-size: 26px;
+            }
+        }
+        table {
+        border-collapse: collapse;
+        width: 100%;
+        }
+        th, td {
+        text-align: left;
+        padding: 8px;
+        }
+        tr:nth-child(even){background-color:#ffffe6}
+        th {
+        background-color: #ffcc99;
+        color: white;
+        }
+        #coverflow img {
+        height: 200px;
+        width: 300px;
+        }
+        #coverflow2 img {
+        height: 200px;
+        width: 300px;
+        }
+        #coverflow3 img {
+        height: 200px;
+        width: 300px;
+        }
+
+block introHeader
+    header.intro
+        .intro-body
+            .container
+                .row
+                    .col-md-8.col-md-offset-2
+                        h1.brand-heading Country
+                        p.intro-text
+                            | Discover the dominat sports for each country
+                        a.btn.btn-circle.page-scroll(href='#about')
+                            i.fa.fa-angle-double-down.animated
+
+block content
+    section#about.container.content-section.text-center
+        .row
+            .col-lg-8.col-lg-offset-2
+                article#A-G.demo
+                    h1 Countries starting from A-G
+
+                    #coverflow
+                        ul.flip-items
+                            li(data-flip-title='Afghanistan')
+                                a(href='/country?country=AFG')
+                                    img(src='img/AFG.png') 
+
+                            li(data-flip-title='Albania')
+                                a(href='/country?country=ALB')
+                                    img(src='img/ALB.png')
+
+                            li(data-flip-title='Algeria')
+                                a(href='/country?country=ALG')
+                                    img(src='img/ALG.png')
+
+                            li(data-flip-title='Andorra')
+                                a(href='/country?country=AND')
+                                    img(src='img/AND.png')
+
+                            li(data-flip-title='Angola')
+                                a(href='/country?country=ANG')
+                                    img(src='img/ANG.png')
+
+                            li(data-flip-title='Antigua and Barbuda')
+                                a(href='/country?country=ANT')
+                                    img(src='img/ANT.png')
+
+                            li(data-flip-title='Argentina')
+                                a(href='/country?country=ARG')
+                                    img(src='img/ARG.png')
+
+                            li(data-flip-title='Armenia')
+                                a(href='/country?country=ARM')
+                                    img(src='img/ARM.png')
+
+                            li(data-flip-title='Aruba')
+                                a(href='/country?country=ARU')
+                                    img(src='img/ARU.png')
+
+                            li(data-flip-title='Australia')
+                                a(href='/country?country=AUS')
+                                    img(src='img/AUS.png')
+
+                            li(data-flip-title='Austria')
+                                a(href='/country?country=AUT')
+                                    img(src='img/AUT.png')
+
+                            li(data-flip-title='Azerbaijan')
+                                a(href='/country?country=AZE')
+                                    img(src='img/AZE.png')
+
+                            li(data-flip-title='Bahamas')
+                                a(href='/country?country=BAH')
+                                    img(src='img/BAH.png')
+
+                            li(data-flip-title='Bangladesh')
+                                a(href='/country?country=BAN')
+                                    img(src='img/BAN.png')
+
+                            li(data-flip-title='Barbados')
+                                a(href='/country?country=BAR')
+                                    img(src='img/BAR.png')
+
+                            li(data-flip-title='Burundi')
+                                a(href='/country?country=BDI')
+                                    img(src='img/BDI.png')
+
+                            li(data-flip-title='Belgium')
+                                a(href='/country?country=BEL')
+                                    img(src='img/BEL.png')
+
+                            li(data-flip-title='Benin')
+                                a(href='/country?country=BEN')
+                                    img(src='img/BEN.png')
+
+                            li(data-flip-title='Bermuda')
+                                a(href='/country?country=BER')
+                                    img(src='img/BER.png')
+
+                            li(data-flip-title='Bhutan')
+                                a(href='/country?country=BHU')
+                                    img(src='img/BHU.png')
+
+                            li(data-flip-title='Bosnia and Herzegovina')
+                                a(href='/country?country=BIH')
+                                    img(src='img/BIH.png')
+
+                            li(data-flip-title='Belize')
+                                a(href='/country?country=BIZ')
+                                    img(src='img/BIZ.png')
+
+                            li(data-flip-title='Belarus')
+                                a(href='/country?country=BLR')
+                                    img(src='img/BLR.png')
+
+                            li(data-flip-title='Bolivia')
+                                a(href='/country?country=BOL')
+                                    img(src='img/BOL.png')
+
+                            li(data-flip-title='Botswana')
+                                a(href='/country?country=BOT')
+                                    img(src='img/BOT.png')
+
+                            li(data-flip-title='Bahrain')
+                                a(href='/country?country=BRN')
+                                    img(src='img/BRN.png')
+
+                            li(data-flip-title=' Brunei')
+                                a(href='/country?country=BRU')
+                                    img(src='img/BRU.png')
+
+                            li(data-flip-title='Bulgaria')
+                                a(href='/country?country=BUL')
+                                    img(src='img/BUL.png')
+
+                            li(data-flip-title='Burkina Faso')
+                                a(href='/country?country=BUR')
+                                    img(src='img/BUR.png')
+
+                            li(data-flip-title='Central African Republic')
+                                a(href='/country?country=CAF')
+                                    img(src='img/CAF.png')
+
+                            li(data-flip-title='Cambodia')
+                                a(href='/country?country=CAM')
+                                    img(src='img/CAM.png')
+
+                            li(data-flip-title='Canada')
+                                a(href='/country?country=CAN')
+                                    img(src='img/CAN.png')
+
+                            li(data-flip-title='Cayman Islands')
+                                a(href='/country?country=CAY')
+                                    img(src='img/CAY.png')
+
+                            li(data-flip-title='Congo')
+                                a(href='/country?country=CGO')
+                                    img(src='img/CGO.png')
+
+                            li(data-flip-title='Chad')
+                                a(href='/country?country=CHA')
+                                    img(src='img/CHA.png')
+
+                            li(data-flip-title='Chile')
+                                a(href='/country?country=CHI')
+                                    img(src='img/CHI.png')
+
+                            li(data-flip-title='China')
+                                a(href='/country?country=CHN')
+                                    img(src='img/CHN.png')
+
+                            li(data-flip-title='Chinese Taipei')
+                                a(href='/country?country=TPE')
+                                    img(src='img/TPE.png')
+
+                            li(data-flip-title='Ivory Coast')
+                                a(href='/country?country=CIV')
+                                    img(src='img/CIV.png')
+
+                            li(data-flip-title='Cameroon')
+                                a(href='/country?country=CMR')
+                                    img(src='img/CMR.png')
+
+                            li(data-flip-title='DR Congo')
+                                a(href='/country?country=COD')
+                                    img(src='img/COD.png')
+
+                            li(data-flip-title='Cook Islands')
+                                a(href='/country?country=COK')
+                                    img(src='img/COK.png')
+
+                            li(data-flip-title='Colombia')
+                                a(href='/country?country=COL')
+                                    img(src='img/COL.png')
+
+                            li(data-flip-title='Comoros')
+                                a(href='/country?country=COM')
+                                    img(src='img/COM.png')
+
+                            li(data-flip-title='Cape Verde')
+                                a(href='/country?country=CPV')
+                                    img(src='img/CPV.png')
+
+                            li(data-flip-title='Costa Rica')
+                                a(href='/country?country=CRC')
+                                    img(src='img/CRC.png')
+
+                            li(data-flip-title='Croatia')
+                                a(href='/country?country=CRO')
+                                    img(src='img/CRO.png')
+
+                            li(data-flip-title='Cuba')
+                                a(href='/country?country=CUB')
+                                    img(src='img/CUB.png')
+
+                            li(data-flip-title='Cyprus')
+                                a(href='/country?country=CYP')
+                                    img(src='img/CYP.png')
+
+                            li(data-flip-title='Denmark')
+                                a(href='/country?country=DEN')
+                                    img(src='img/DEN.png')
+
+                            li(data-flip-title='Djibouti')
+                                a(href='/country?country=DJI')
+                                    img(src='img/DJI.png')
+
+                            li(data-flip-title='Dominica')
+                                a(href='/country?country=DMA')
+                                    img(src='img/DMA.png')
+
+                            li(data-flip-title='Dominican Republic')
+                                a(href='/country?country=DOM')
+                                    img(src='img/DOM.png')
+
+                            li(data-flip-title='Ecuador')
+                                a(href='/country?country=ECU')
+                                    img(src='img/ECU.png')
+
+                            li(data-flip-title='Egypt')
+                                a(href='/country?country=EGY')
+                                    img(src='img/EGY.png')
+
+                            li(data-flip-title='Eritrea')
+                                a(href='/country?country=ERI')
+                                    img(src='img/ERI.png')    
+
+                            li(data-flip-title='El Salvador')
+                                a(href='/country?country=ESA')
+                                    img(src='img/ESA.png')   
+
+                            li(data-flip-title='Spain')
+                                a(href='/country?country=ESP')
+                                    img(src='img/ESP.png')   
+
+                            li(data-flip-title='Estonia')
+                                a(href='/country?country=EST')
+                                    img(src='img/EST.png') 
+
+                            li(data-flip-title='Ethiopia')
+                                a(href='/country?country=ETH')
+                                    img(src='img/ETH.png') 
+
+                            li(data-flip-title='Fiji')
+                                a(href='/country?country=FIJ')
+                                    img(src='img/FIJ.png') 
+
+                            li(data-flip-title='Finland')
+                                a(href='/country?country=FIN')
+                                    img(src='img/FIN.png') 
+
+                            li(data-flip-title='France')
+                                a(href='/country?country=FRA')
+                                    img(src='img/FRA.png') 
+
+                            li(data-flip-title='Federated States of Micronesia')
+                                a(href='/country?country=FSM')
+                                    img(src='img/FSM.png') 
+
+                            li(data-flip-title='Gabon')
+                                a(href='/country?country=GAB')
+                                    img(src='img/GAB.png') 
+
+                            li(data-flip-title='Gambia')
+                                a(href='/country?country=GAM')
+                                    img(src='img/GAM.png') 
+
+                            li(data-flip-title='Great Britain')
+                                a(href='/country?country=GBR')
+                                    img(src='img/GBR.png') 
+
+                            li(data-flip-title='Guinea-Bissau')
+                                a(href='/country?country=GBS')
+                                    img(src='img/GBS.png') 
+
+                            li(data-flip-title='Georgia')
+                                a(href='/country?country=GEO')
+                                    img(src='img/GEO.png') 
+
+                            li(data-flip-title='Equatorial Guinea')
+                                a(href='/country?country=GEQ')
+                                    img(src='img/GEQ.png') 
+
+                            li(data-flip-title='Germany')
+                                a(href='/country?country=GER')
+                                    img(src='img/GER.png') 
+
+                            li(data-flip-title='Ghana')
+                                a(href='/country?country=GHA')
+                                    img(src='img/GHA.png') 
+
+                            li(data-flip-title='Greece')
+                                a(href='/country?country=GRE')
+                                    img(src='img/GRE.png') 
+
+                            li(data-flip-title='Grenada')
+                                a(href='/country?country=GRN')
+                                    img(src='img/GRN.png') 
+
+                            li(data-flip-title='Guatemala')
+                                a(href='/country?country=GUA')
+                                    img(src='img/GUA.png') 
+
+                            li(data-flip-title='Guinea')
+                                a(href='/country?country=GUI')
+                                    img(src='img/GUI.png') 
+
+                            li(data-flip-title='Guam')
+                                a(href='/country?country=GUM')
+                                    img(src='img/GUM.png')
+
+                            li(data-flip-title='Guyana')
+                                a(href='/country?country=GUY')
+                                    img(src='img/GUY.png')
+                    script.
+                        var coverflow = $("#coverflow").flipster({nav: 'after', spacing: -0.3, loop: true, start: 'center'});
+
+                article#H-P.demo
+                    h1 Countries starting from H-P
+
+                    #coverflow2
+                        ul.flip-items
+                            li(data-flip-title='Haiti')
+                                a(href='/country?country=HAI')
+                                    img(src='img/HAI.png') 
+
+                            li(data-flip-title='Hong Kong, China')
+                                a(href='/country?country=HKG')
+                                    img(src='img/HKG.png') 
+
+                            li(data-flip-title='Honduras')
+                                a(href='/country?country=HON')
+                                    img(src='img/HON.png')
+
+                            li(data-flip-title='Hungary')
+                                a(href='/country?country=HUN')
+                                    img(src='img/HUN.png')
+
+                            li(data-flip-title='Indonesia')
+                                a(href='/country?country=INA')
+                                    img(src='img/INA.png')
+
+                            li(data-flip-title='India')
+                                a(href='/country?country=IND')
+                                    img(src='img/IND.png')
+
+                            li(data-flip-title='Islamic Republic of Iran')
+                                a(href='/country?country=IRI')
+                                    img(src='img/IRI.png')
+
+                            li(data-flip-title='Ireland')
+                                a(href='/country?country=IRL')
+                                    img(src='img/IRL.png')
+
+                            li(data-flip-title='Iraq')
+                                a(href='/country?country=IRQ')
+                                    img(src='img/IRQ.png')
+
+                            li(data-flip-title='Iceland')
+                                a(href='/country?country=ISL')
+                                    img(src='img/ISL.png')
+
+                            li(data-flip-title='Israel')
+                                a(href='/country?country=ISR')
+                                    img(src='img/ISR.png')
+
+                            li(data-flip-title='Italy')
+                                a(href='/country?country=ITA')
+                                    img(src='img/ITA.png')
+
+                            li(data-flip-title='Jamaica')
+                                a(href='/country?country=JAM')
+                                    img(src='img/JAM.png')
+
+                            li(data-flip-title='Jordan')
+                                a(href='/country?country=JOR')
+                                    img(src='img/JOR.png')
+
+                            li(data-flip-title='Japan')
+                                a(href='/country?country=JPN')
+                                    img(src='img/JPN.png')
+
+                            li(data-flip-title='Kazakhstan')
+                                a(href='/country?country=KAZ')
+                                    img(src='img/KAZ.png')
+
+                            li(data-flip-title='Kenya')
+                                a(href='/country?country=KEN')
+                                    img(src='img/KEN.png')
+
+                            li(data-flip-title='Kyrgyzstan')
+                                a(href='/country?country=KGZ')
+                                    img(src='img/KGZ.png')
+
+                            li(data-flip-title='Kiribati')
+                                a(href='/country?country=KIR')
+                                    img(src='img/KIR.png')
+
+                            li(data-flip-title='Republic of Korea')
+                                a(href='/country?country=KOR')
+                                    img(src='img/KOR.png')
+
+                            li(data-flip-title='Kosovo')
+                                a(href='/country?country=KOS')
+                                    img(src='img/KOS.png')
+
+                            li(data-flip-title='Saudi Arabia')
+                                a(href='/country?country=KSA')
+                                    img(src='img/KSA.png')
+
+                            li(data-flip-title='Lao People\'s Democratic Republic')
+                                a(href='/country?country=LAO')
+                                    img(src='img/LAO.png')
+
+                            li(data-flip-title='Latvia')
+                                a(href='/country?country=LAT')
+                                    img(src='img/LAT.png')
+
+                            li(data-flip-title='Lebanon')
+                                a(href='/country?country=LIB')
+                                    img(src='img/LIB.png')
+
+                            li(data-flip-title='Lesotho')
+                                a(href='/country?country=LES')
+                                    img(src='img/LES.png')
+
+                            li(data-flip-title='Liberia')
+                                a(href='/country?country=LBR')
+                                    img(src='img/LBR.png')
+
+                            li(data-flip-title='Libya')
+                                a(href='/country?country=LBA')
+                                    img(src='img/LBA.png')
+
+                            li(data-flip-title='Liechtenstein')
+                                a(href='/country?country=LIE')
+                                    img(src='img/LIE.png')
+
+                            li(data-flip-title='Lithuania')
+                                a(href='/country?country=LTU')
+                                    img(src='img/LTU.png')
+
+                            li(data-flip-title='Luxembourg')
+                                a(href='/country?country=LUX')
+                                    img(src='img/LUX.png')
+
+                            li(data-flip-title='Macedonia')
+                                a(href='/country?country=MKD')
+                                    img(src='img/MKD.png')
+
+                            li(data-flip-title='Madagascar')
+                                a(href='/country?country=MAD')
+                                    img(src='img/MAD.png')
+
+                            li(data-flip-title='Malawi')
+                                a(href='/country?country=MAW')
+                                    img(src='img/MAW.png')
+
+                            li(data-flip-title='Malasia')
+                                a(href='/country?country=MAS')
+                                    img(src='img/MAS.png')
+
+                            li(data-flip-title='Maldives')
+                                a(href='/country?country=MDV')
+                                    img(src='img/MDV.png')
+
+                            li(data-flip-title='Mali')
+                                a(href='/country?country=MLI')
+                                    img(src='img/MLI.png')
+
+                            li(data-flip-title='Malta')
+                                a(href='/country?country=MLT')
+                                    img(src='img/MLT.png')
+
+                            li(data-flip-title='Marshall Islands')
+                                a(href='/country?country=MHL')
+                                    img(src='img/MHL.png')
+
+                            li(data-flip-title='Mauritania')
+                                a(href='/country?country=MTN')
+                                    img(src='img/MTN.png')
+
+                            li(data-flip-title='Mauritius')
+                                a(href='/country?country=MRI')
+                                    img(src='img/MRI.png')
+
+                            li(data-flip-title='Mexico')
+                                a(href='/country?country=MEX')
+                                    img(src='img/MEX.png')
+
+                            li(data-flip-title='Micronesia')
+                                a(href='/country?country=FSM')
+                                    img(src='img/FSM.png')
+
+                            li(data-flip-title='Moldova')
+                                a(href='/country?country=MDA')
+                                    img(src='img/MDA.png')
+
+                            li(data-flip-title='Monaco')
+                                a(href='/country?country=MON')
+                                    img(src='img/MON.png')
+
+                            li(data-flip-title='Mongolia')
+                                a(href='/country?country=MGL')
+                                    img(src='img/MGL.png')
+
+                            li(data-flip-title='Montenegro')
+                                a(href='/country?country=MNE')
+                                    img(src='img/MNE.png')
+
+                            li(data-flip-title='Morocco')
+                                a(href='/country?country=MAR')
+                                    img(src='img/MAR.png')
+
+                            li(data-flip-title='Mozambique')
+                                a(href='/country?country=MOZ')
+                                    img(src='img/MOZ.png')
+
+                            li(data-flip-title='Myanmar')
+                                a(href='/country?country=MYA')
+                                    img(src='img/MYA.png')
+
+                            li(data-flip-title='Namibia')
+                                a(href='/country?country=NAM')
+                                    img(src='img/NAM.png')
+
+                            li(data-flip-title='Nauru')
+                                a(href='/country?country=NRU')
+                                    img(src='img/NRU.png')
+
+                            li(data-flip-title='Nepal')
+                                a(href='/country?country=NEP')
+                                    img(src='img/NEP.png')
+
+                            li(data-flip-title='Netherland')
+                                a(href='/country?country=NED')
+                                    img(src='img/NED.png')
+
+                            li(data-flip-title='New Zealand')
+                                a(href='/country?country=NZL')
+                                    img(src='img/NZL.png')
+
+                            li(data-flip-title='Nicaragua')
+                                a(href='/country?country=NCA')
+                                    img(src='img/NCA.png')
+
+                            li(data-flip-title='Niger')
+                                a(href='/country?country=NIG')
+                                    img(src='img/NIG.png')
+
+                            li(data-flip-title='Nigeria')
+                                a(href='/country?country=NGR')
+                                    img(src='img/NGR.png')
+
+                            li(data-flip-title='Norway')
+                                a(href='/country?country=NOR')
+                                    img(src='img/NOR.png')
+
+                            li(data-flip-title='Oman')
+                                a(href='/country?country=OMA')
+                                    img(src='img/OMA.png')
+
+                            li(data-flip-title='Pakistan')
+                                a(href='/country?country=PAK')
+                                    img(src='img/PAK.png')
+
+                            li(data-flip-title='Palau')
+                                a(href='/country?country=PLW')
+                                    img(src='img/PLW.png')
+
+                            li(data-flip-title='Palestine')
+                                a(href='/country?country=PLE')
+                                    img(src='img/PLE.png')
+
+                            li(data-flip-title='Panama')
+                                a(href='/country?country=PAN')
+                                    img(src='img/PAN.png')
+
+                            li(data-flip-title='Papua New Guinea')
+                                a(href='/country?country=PNG')
+                                    img(src='img/PNG.png')
+
+                            li(data-flip-title='Paraguay')
+                                a(href='/country?country=PAR')
+                                    img(src='img/PAR.png')
+
+                            li(data-flip-title='Peru')
+                                a(href='/country?country=PER')
+                                    img(src='img/PER.png')
+
+                            li(data-flip-title='Philippines')
+                                a(href='/country?country=PHI')
+                                    img(src='img/PHI.png')
+
+                            li(data-flip-title='Poland')
+                                a(href='/country?country=POL')
+                                    img(src='img/POL.png')
+
+                            li(data-flip-title='Portugal')
+                                a(href='/country?country=POR')
+                                    img(src='img/POR.png')
+
+                            li(data-flip-title='Puerto Rico')
+                                a(href='/country?country=PUR')
+                                    img(src='img/PUR.png')
+                    script.
+                        var coverflow2 = $("#coverflow2").flipster({nav: 'after', spacing: -0.3, loop: true, start: 'center'});
+
+                article#Q-Z.demo
+                    h1 Countries starting from Q-Z
+
+                    #coverflow3
+                        ul.flip-items
+                            li(data-flip-title='Qatar')
+                                a(href='/country?country=QAT')
+                                    img(src='img/QAT.png')
+
+                            li(data-flip-title='Romania')
+                                a(href='/country?country=ROU')
+                                    img(src='img/ROU.png')
+
+                            li(data-flip-title='Russia')
+                                a(href='/country?country=RUS')
+                                    img(src='img/RUS.png')
+
+                            li(data-flip-title='Rwanda')
+                                a(href='/country?country=RWA')
+                                    img(src='img/RWA.png')
+
+                            li(data-flip-title='Saint Kitts and Nevis')
+                                a(href='/country?country=SKN')
+                                    img(src='img/SKN.png')
+
+                            li(data-flip-title='Saint Lucia')
+                                a(href='/country?country=LCA')
+                                    img(src='img/LCA.png')
+
+                            li(data-flip-title='Saint Vincent and the Grenadines')
+                                a(href='/country?country=VIN')
+                                    img(src='img/VIN.png')
+
+                            li(data-flip-title='Samoa')
+                                a(href='/country?country=SAM')
+                                    img(src='img/SAM.png')
+
+                            li(data-flip-title='San Marino')
+                                a(href='/country?country=SMR')
+                                    img(src='img/SMR.png')
+
+                            li(data-flip-title='Sao Tome and Principe')
+                                a(href='/country?country=STP')
+                                    img(src='img/STP.png')
+
+                            li(data-flip-title='Saudi Arabia')
+                                a(href='/country?country=KSA')
+                                    img(src='img/KSA.png')
+
+                            li(data-flip-title='Senegal')
+                                a(href='/country?country=SEN')
+                                    img(src='img/SEN.png')
+
+                            li(data-flip-title='Serbia')
+                                a(href='/country?country=SRB')
+                                    img(src='img/SRB.png')
+
+                            li(data-flip-title='Seychelles')
+                                a(href='/country?country=SEY')
+                                    img(src='img/LIB.png')
+
+                            li(data-flip-title='Sierra Leone')
+                                a(href='/country?country=SLE')
+                                    img(src='img/SLE.png')
+
+                            li(data-flip-title='Singapore')
+                                a(href='/country?country=SIN')
+                                    img(src='img/SIN.png')
+
+                            li(data-flip-title='Slovakia')
+                                a(href='/country?country=SVK')
+                                    img(src='img/SVK.png')
+
+                            li(data-flip-title='Slovenia')
+                                a(href='/country?country=SLO')
+                                    img(src='img/SLO.png')
+
+                            li(data-flip-title='Solomon Islands')
+                                a(href='/country?country=SOL')
+                                    img(src='img/SOL.png')
+
+                            li(data-flip-title='Somalia')
+                                a(href='/country?country=SOM')
+                                    img(src='img/SOM.png')
+
+                            li(data-flip-title='South Africa')
+                                a(href='/country?country=RSA')
+                                    img(src='img/RSA.png')
+
+                            li(data-flip-title='Spain')
+                                a(href='/country?country=ESP')
+                                    img(src='img/ESP.png')
+
+                            li(data-flip-title='Sri Lanka')
+                                a(href='/country?country=SRI')
+                                    img(src='img/SRI.png')
+
+                            li(data-flip-title='Sudan')
+                                a(href='/country?country=SUD')
+                                    img(src='img/SUD.png')
+
+                            li(data-flip-title='South Sudan')
+                                a(href='/country?country=SSD')
+                                    img(src='img/SSD.png')
+
+                            li(data-flip-title='Suriname')
+                                a(href='/country?country=SUR')
+                                    img(src='img/SUR.png')
+
+                            li(data-flip-title='Swaziland')
+                                a(href='/country?country=SWZ')
+                                    img(src='img/SWZ.png')
+
+                            li(data-flip-title='Sweden')
+                                a(href='/country?country=SWE')
+                                    img(src='img/SWE.png')
+
+                            li(data-flip-title='Swizerland')
+                                a(href='/country?country=SUI')
+                                    img(src='img/SUI.png')
+
+                            li(data-flip-title='Syria')
+                                a(href='/country?country=SYR')
+                                    img(src='img/SYR.png')
+
+                            li(data-flip-title='Tajikistan')
+                                a(href='/country?country=TJK')
+                                    img(src='img/TJK.png')
+
+                            li(data-flip-title='Tanzania')
+                                a(href='/country?country=TAN')
+                                    img(src='img/TAN.png')
+
+                            li(data-flip-title='Thailand')
+                                a(href='/country?country=THA')
+                                    img(src='img/THA.png')
+
+                            li(data-flip-title='Timor-Leste')
+                                a(href='/country?country=TLS')
+                                    img(src='img/TLS.png')
+
+                            li(data-flip-title='Togo')
+                                a(href='/country?country=TOG')
+                                    img(src='img/TOG.png')
+
+                            li(data-flip-title='Tonga')
+                                a(href='/country?country=TGA')
+                                    img(src='img/TGA.png')
+
+                            li(data-flip-title='Trinidad and Tobago')
+                                a(href='/country?country=TTO')
+                                    img(src='img/TTO.png')
+
+                            li(data-flip-title='Turkey')
+                                a(href='/country?country=TUR')
+                                    img(src='img/TUR.png')
+
+                            li(data-flip-title='Turkmenistan')
+                                a(href='/country?country=TKM')
+                                    img(src='img/TKM.png')
+
+                            li(data-flip-title='Tuvalu')
+                                a(href='/country?country=TUV')
+                                    img(src='img/TUV.png')
+
+                            li(data-flip-title='Uganda')
+                                a(href='/country?country=UGA')
+                                    img(src='img/UGA.png')
+
+                            li(data-flip-title='Ukraine')
+                                a(href='/country?country=UKR')
+                                    img(src='img/UKR.png')
+
+                            li(data-flip-title='United Arab Emirates')
+                                a(href='/country?country=UAE')
+                                    img(src='img/UAE.png')
+
+                            li(data-flip-title='United States')
+                                a(href='/country?country=USA')
+                                    img(src='img/USA.png')
+
+                            li(data-flip-title='Uruguay')
+                                a(href='/country?country=URU')
+                                    img(src='img/URU.png')
+
+                            li(data-flip-title='Uzbekistan')
+                                a(href='/country?country=UZB')
+                                    img(src='img/UZB.png')
+
+                            li(data-flip-title='Vanuatu')
+                                a(href='/country?country=VAN')
+                                    img(src='img/VAN.png')
+
+                            li(data-flip-title='Venezuela')
+                                a(href='/country?country=VEN')
+                                    img(src='img/VEN.png')
+
+                            li(data-flip-title='Vietnam')
+                                a(href='/country?country=VIE')
+                                    img(src='img/VIE.png')
+
+                            li(data-flip-title='Virgin Islands')
+                                a(href='/country?country=ISV')
+                                    img(src='img/ISV.png')
+
+                            li(data-flip-title='Individual Olympic Athletes')
+                                a(href='/country?country=IOA')
+                                    img(src='img/ROT.png')
+
+                            li(data-flip-title='Refugee Olympic Team')
+                                a(href='/country?country=ROT')
+                                    img(src='img/ROT.png')
+
+                    script.
+                        var coverflow3 = $("#coverflow3").flipster({nav: 'after', spacing: -0.3, loop: true, start: 'center'});

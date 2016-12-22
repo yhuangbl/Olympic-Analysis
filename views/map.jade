@@ -1,0 +1,125 @@
+extends layout
+block extraHeader
+    style.
+        .intro {
+            display: table;
+            width: 100%;
+            height: auto;
+            padding: 100px 0;
+            text-align: center;
+            color: white;
+            background: url(../img/map-bg.jpg) no-repeat bottom center scroll;
+            background-color: black;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            background-size: cover;
+            -o-background-size: cover;
+        }
+
+        .intro .intro-body {
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        .intro .intro-body .brand-heading {
+            font-size: 40px;
+        }
+
+        .intro .intro-body .intro-text {
+            font-size: 18px;
+        }
+
+        @media (min-width: 768px) {
+            .intro {
+                height: 100%;
+                padding: 0;
+            }
+            .intro .intro-body .brand-heading {
+                font-size: 80px;
+            }
+            .intro .intro-body .intro-text {
+                font-size: 26px;
+            }
+        }
+
+        //- #container {
+        //-     width: 800px;
+        //-     height: 450px;
+        //-     margin: 30px;
+        //- }
+        //- .panel {
+        //-     width: 300px;
+        //-     margin: 30px;
+        //- }
+
+block introHeader
+    header.intro
+        .intro-body
+            .container
+                .row
+                    .col-md-8.col-md-offset-2
+                        h1.brand-heading Map
+                        p.intro-text
+                            | A glimpse at the distrubtion of Olympics medals
+                        a.btn.btn-circle.page-scroll(href='#about')
+                            i.fa.fa-angle-double-down.animated
+
+block content
+    script(src='//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js')
+    script(src='//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js')
+    script(src='/scripts/datamaps.world.min.js')
+
+    section#about.container.content-section.text-center
+        .row
+            .col-lg-8.col-lg-offset-2
+                h2 Olympic medals world distrubtion
+                p From 1896 to 2008
+                p Hover on each counry to see how many medals they get
+                #container(style='width:800px; height:450px')
+    section#about.container.content-section.text-center
+        .row
+            .col-lg-8.col-lg-offset-2
+                h2 Olympic medal ranking
+                p From 1896 to 2008
+                .panel.panel-danger
+                    .panel-heading
+                        strong Countries That Win The Most Medals
+                    .table-responsive
+                        table.table.table-hover
+                            thead
+                                tr
+                                    th Country
+                                    th &nbsp;
+                                    th # of medals
+                            tbody
+                                - for (var inx = 0; inx < results.rows.length; inx++)
+                                    tr
+                                        td=results.rows[inx][0]
+                                        td &nbsp;
+                                        td=results.rows[inx][2]
+                                        td &nbsp;
+
+    script.
+        var local_data =!{JSON.stringify(data)};
+        console.log(local_data);
+        var map = new Datamap({
+        element: document.getElementById('container'),
+        fills: {
+        ">= 500": '#D65780',
+        "< 500": '#C7A27C',
+        "< 100": '#EFD2CB',
+        defaultFill: '#CCD7C5'
+        },
+        data: local_data,
+        geographyConfig: {
+        popupTemplate: function(geo, data) {
+        return ['<div class="hoverinfo"><strong>',
+        geo.properties.name, '</strong><br>', 
+        'Medals: '+data.numberOfThings,'</div>'].join('');
+        },
+        highlightFillColor: false,
+        highlightBorderColor: '#26547C',
+        highlightBorderWidth: 3
+        }
+        });
+        map.legend();
